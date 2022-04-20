@@ -47,55 +47,20 @@ Route::group(['namespace'=>'App\Http\Controllers','middleware'=>'is_admin'],func
     });
 
 
-    Route::prefix('logos')->group(function(){
-        Route::get('/view','LogosController@view')->name('logos.view');
-        Route::get('/add','LogosController@add')->name('logos.add');
-        Route::post('/store','LogosController@store')->name('logos.store');
-        Route::get('/edit/{id}','LogosController@edit')->name('logos.edit');
-        Route::post('/update/{id}','LogosController@update')->name('logos.update');
-        Route::get('/delete/{id}','LogosController@delete')->name('logos.delete');
+  
+
+  
+
+  
+  
+   Route::prefix('package')->group(function(){
+        Route::get('/view','PackageController@view')->name('package.view');
+        Route::get('/add','PackageController@add')->name('package.add');
+        Route::post('/store','PackageController@store')->name('package.store');
+        Route::get('/edit/{id}','PackageController@edit')->name('package.edit');
+        Route::post('/update/{id}','PackageController@update')->name('package.update');
+        Route::get('/delete/{id}','PackageController@delete')->name('package.delete');
 
     });
-
-    Route::prefix('slider')->group(function(){
-        Route::get('/view','SliderController@view')->name('slider.view');
-        Route::get('/add','SliderController@add')->name('slider.add');
-        Route::post('/store','SliderController@store')->name('slider.store');
-        Route::get('/edit/{id}','SliderController@edit')->name('slider.edit');
-        Route::post('/update/{id}','SliderController@update')->name('slider.update');
-        Route::get('/delete/{id}','SliderController@delete')->name('slider.delete');
-
-    });
-
-    Route::prefix('portfolio_a')->group(function(){
-        Route::get('/view','PortfolioController@view_a')->name('portfolio_a.view');
-        Route::get('/add','PortfolioController@add_a')->name('portfolio_a.add');
-        Route::post('/store','PortfolioController@store_a')->name('portfolio_a.store');
-        Route::get('/edit/{id}','PortfolioController@edit_a')->name('portfolio_a.edit');
-        Route::post('/update/{id}','PortfolioController@update_a')->name('portfolio_a.update');
-        Route::get('/delete/{id}','PortfolioController@delete_a')->name('portfolio_a.delete');
-
-    });
-
-     Route::prefix('about')->group(function(){
-        Route::get('/view','AboutController@view')->name('about.view');
-        Route::get('/add','AboutController@add')->name('about.add');
-        Route::post('/store','AboutController@store')->name('about.store');
-        Route::get('/edit/{id}','AboutController@edit')->name('about.edit');
-        Route::post('/update/{id}','AboutController@update')->name('about.update');
-        Route::get('/delete/{id}','AboutController@delete')->name('about.delete');
-
-    });
-
-    Route::prefix('contact')->group(function(){
-        Route::get('/view','ContactController@view')->name('contact.view');
-        Route::get('/add','ContactController@add')->name('contact.add');
-        Route::post('/store','ContactController@store')->name('contact.store');
-        Route::get('/edit/{id}','ContactController@edit')->name('contact.edit');
-        Route::post('/update/{id}','ContactController@update')->name('contact.update');
-        Route::get('/delete/{id}','ContactController@delete')->name('contact.delete');
-
-    });
-   
     
 });

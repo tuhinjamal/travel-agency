@@ -45,7 +45,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                User Management
+                Profile
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right"></span>
               </p>
@@ -54,7 +54,7 @@
               <li class="nav-item">
                 <a href=" {{route('users.view')}} " class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>View Users</p>
+                  <p>View Profile</p>
                 </a>
               </li>
              
@@ -63,36 +63,7 @@
           </li>
         </ul>
 
-        <!-- option 2 -->
-         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-           
-           
-          </li>
-          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Package management
-                <i class="fas fa-angle-left right"></i>
-                <!-- <span class="badge badge-info right"></span> -->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('package.view')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>View Packge</p>
-                </a>
-              </li>
-              
-              
-            </ul>
-          </li>
-        </ul>
+        
       </nav>
       
       <!-- /.sidebar-menu -->

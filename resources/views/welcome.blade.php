@@ -1,3 +1,6 @@
+@php
+$count=1;
+@endphp
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
 
@@ -202,7 +205,8 @@
     <!-- < hereby search box has finished> -->
 
     <section class="popular-packages">
-        <div class="container">
+    
+        <div class="container {{$count == '1' ? 'active':''}}">
             <div class="section-title text-center">
                 <h2>Popular Packages</h2>
                 <div class="section-icon">
@@ -211,132 +215,115 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.Duis aute irure dolor in reprehenderit..</p>
             </div>
-            <h2>Umrah package</h2>
+             
+            <h2>Hajj packages</h2>
+            
             <section class="blog pb-5">
+             
                 <div class="container">
                     <div class="row">
+                    @foreach($hajj as $package)  
+                        <div class="col-lg-4  col-md-4 mar-bottom-30">
 
-                        <div class="col-lg-4 col-6 col-md-4 mar-bottom-30">
                             <div class="blog-item">
                                 <div class="blog-image">
-                                    <img src="images/blog1.jpg" alt="Image">
+                                    <img src="{{url('upload/package_image/'.$package->image)}}" alt="Image">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-date">
-                                        <p><i class="fa fa-clock-o"></i> Posted On : 12 May</p>
+                                        <p><i class="fa fa-clock-o"></i>  Starts at  : {{$package->starts_at }}</p>
                                     </div>
-                                    <h3><a href="blog-detail.html">What happened during my first trip alone</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt
-                                        ut labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit.</p>
-                                    <div class="blog-author">
-                                        <div class="pull-left">
-                                            <p><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Jack
-                                                    Richard</a></p>
-                                        </div>
-                                        <div class="pull-right blog-date-icon">
-                                            <p><i class="fa fa-eye" aria-hidden="true"></i> 24</p>
-                                            <p><i class="fa fa-heart" aria-hidden="true"></i> 5</p>
-                                            <p><i class="fa fa-comment-o" aria-hidden="true"></i> 0</p>
-                                        </div>
-                                    </div>
+                                    <h3><a href="#">{{$package->title}}</a></h3>
+                                    <p>{!! $package->description!!}</p>
+                                    
                                 </div>
+                   
                             </div>
+                   
                         </div>
-
-
-                        <div class="col-lg-4 col-6 col-md-4 mar-bottom-30">
-                            <div class="blog-item">
-                                <div class="blog-image">
-                                    <img src="images/blog1.jpg" alt="Image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-date">
-                                        <p><i class="fa fa-clock-o"></i> Posted On : 12 May</p>
-                                    </div>
-                                    <h3><a href="blog-detail.html">What happened during my first trip alone</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt
-                                        ut labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit.</p>
-                                    <div class="blog-author">
-                                        <div class="pull-left">
-                                            <p><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Jack
-                                                    Richard</a></p>
-                                        </div>
-                                        <div class="pull-right blog-date-icon">
-                                            <p><i class="fa fa-eye" aria-hidden="true"></i> 24</p>
-                                            <p><i class="fa fa-heart" aria-hidden="true"></i> 5</p>
-                                            <p><i class="fa fa-comment-o" aria-hidden="true"></i> 0</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-6 col-md-4 mar-bottom-30">
-                            <div class="blog-item">
-                                <div class="blog-image">
-                                    <img src="images/blog1.jpg" alt="Image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-date">
-                                        <p><i class="fa fa-clock-o"></i> Posted On : 12 May</p>
-                                    </div>
-                                    <h3><a href="blog-detail.html">What happened during my first trip alone</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt
-                                        ut labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit.</p>
-                                    <div class="blog-author">
-                                        <div class="pull-left">
-                                            <p><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Jack
-                                                    Richard</a></p>
-                                        </div>
-                                        <div class="pull-right blog-date-icon">
-                                            <p><i class="fa fa-eye" aria-hidden="true"></i> 24</p>
-                                            <p><i class="fa fa-heart" aria-hidden="true"></i> 5</p>
-                                            <p><i class="fa fa-comment-o" aria-hidden="true"></i> 0</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-6 col-md-4 mar-bottom-30">
-                            <div class="blog-item">
-                                <div class="blog-image">
-                                    <img src="images/blog1.jpg" alt="Image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-date">
-                                        <p><i class="fa fa-clock-o"></i> Posted On : 12 May</p>
-                                    </div>
-                                    <h3><a href="blog-detail.html">What happened during my first trip alone</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt
-                                        ut labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit.</p>
-                                    <div class="blog-author">
-                                        <div class="pull-left">
-                                            <p><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i> Jack
-                                                    Richard</a></p>
-                                        </div>
-                                        <div class="pull-right blog-date-icon">
-                                            <p><i class="fa fa-eye" aria-hidden="true"></i> 24</p>
-                                            <p><i class="fa fa-heart" aria-hidden="true"></i> 5</p>
-                                            <p><i class="fa fa-comment-o" aria-hidden="true"></i> 0</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @php
+                        $count++
+                        @endphp
+                    @endforeach
+                    </div> 
                 </div>
+                
+                
             </section>
+            
 
             <!-- Hajj packge  -->
-            <h2>Hajj package</h2>
+            <h2>Umrah packages</h2>
+            <section class="blog pb-5">
+             
+                <div class="container">
+                    <div class="row">
+                    @foreach($umrah as $package)  
+                        <div class="col-lg-4  col-md-4 mar-bottom-30">
+
+                            <div class="blog-item">
+                                <div class="blog-image">
+                                    <img src="{{url('upload/package_image/'.$package->image)}}" alt="Image">
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-date">
+                                        <p><i class="fa fa-clock-o"></i>  Starts at  : {{$package->starts_at }}</p>
+                                    </div>
+                                    <h3><a href="#">{{$package->title}}</a></h3>
+                                    <p>{!! $package->description!!}</p>
+                                    
+                                </div>
+                   
+                            </div>
+                   
+                        </div>
+                        @php
+                        $count++
+                        @endphp
+                    @endforeach
+                    </div> 
+                </div>
+                
+                
+            </section>
+
+            <h2>Tour packages</h2>
+            <section class="blog pb-5">
+             
+                <div class="container">
+                    <div class="row">
+                    @foreach($tour as $package)  
+                        <div class="col-lg-4  col-md-4 mar-bottom-30">
+
+                            <div class="blog-item">
+                                <div class="blog-image">
+                                    <img src="{{url('upload/package_image/'.$package->image)}}" alt="Image">
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-date">
+                                        <p><i class="fa fa-clock-o"></i>  Starts at  : {{$package->starts_at }}</p>
+                                    </div>
+                                    <h3><a href="#">{{$package->title}}</a></h3>
+                                    <p>{!! $package->description!!}</p>
+                                    
+                                </div>
+                   
+                            </div>
+                   
+                        </div>
+                        @php
+                        $count++
+                        @endphp
+                    @endforeach
+                    </div> 
+                </div>
+                
+                
+            </section>
 
 
         </div>
+      
     </section>
 
 
