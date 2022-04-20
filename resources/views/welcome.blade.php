@@ -339,6 +339,8 @@ $count=1;
                         <i class="flaticon-diamond"></i>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit..</p>
                 </div>
 
