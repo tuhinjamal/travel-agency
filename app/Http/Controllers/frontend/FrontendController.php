@@ -15,11 +15,20 @@ class FrontendController extends Controller
         $data['hajj'] = DB::table('packages')
                     ->where('category', '=', 0)
                     ->get();
+        $data['first'] =   DB::table('packages')
+        ->where('category', '=', 0)
+        ->get();
         $data['umrah'] = DB::table('packages')
                     ->where('category', '=', 1)
                     ->get();
+        $data['second'] =   DB::table('packages')
+                    ->where('category', '=', 0)
+                    ->get();
         $data['tour'] = DB::table('packages')
                     ->where('category', '=', 2)
+                    ->get();
+        $data['third'] =   DB::table('packages')
+                    ->where('category', '=', 0)
                     ->get();
         
        

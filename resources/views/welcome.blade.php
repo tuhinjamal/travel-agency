@@ -208,6 +208,7 @@ $count=1;
     
         <div class="container {{$count == '1' ? 'active':''}}">
             <div class="section-title text-center">
+           
                 <h2>Popular Packages</h2>
                 <div class="section-icon">
                     <i class="flaticon-diamond"></i>
@@ -215,8 +216,9 @@ $count=1;
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.Duis aute irure dolor in reprehenderit..</p>
             </div>
-             
-            <h2>Hajj packages</h2>
+          
+            <h2>{{$first[0]->name}}</h2>
+           
             
             <section class="blog pb-5">
              
@@ -253,7 +255,7 @@ $count=1;
             
 
             <!-- Hajj packge  -->
-            <h2>Umrah packages</h2>
+            <h2>{{$second[0]->name}}</h2>
             <section class="blog pb-5">
              
                 <div class="container">
@@ -287,7 +289,7 @@ $count=1;
                 
             </section>
 
-            <h2>Tour packages</h2>
+            <h2>{{$third[0]->name}}</h2>
             <section class="blog pb-5">
              
                 <div class="container">
@@ -339,8 +341,6 @@ $count=1;
                         <i class="flaticon-diamond"></i>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit..</p>
                 </div>
 
