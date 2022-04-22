@@ -24,45 +24,43 @@
                   Package List
                   
                 </h3>
-                <a class="btn btn-success float-right btn-sm" href=" {{route('package.add')}} "> <i class="fa fa-plus-circle"></i> Add Package</a>
+                <a class="btn btn-success float-right btn-sm" href=" {{route('element.add')}} "> <i class="fa fa-plus-circle"></i> Add Contact/logo</a>
               </div><!-- /.card-header -->
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-hover">
                     <thead>
                       <tr>
                         <th>SL.</th>
-                        <th>Category</th>
-                        <th>name</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Starts at</th>
-                        <th>Meta Title</th>
-                        <th>Meta Description</th>
-                        <th>Image</th>
-                        <th>Meta Image</th>
+                        <th>title</th>
+                        <th>phone-1</th>
+                        <th>Phone-2</th>
+                        <th>Phone-3</th>
+                        <th>address</th>
+                        <th>website</th>
+                        <th>Logo</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($data as $key=>$package)
+                      @foreach($data as $key=>$element)
                       <tr>
                         <td> {{$key+1}} </td>
-                        <td> {{$package->category}} </td>
-                        <td> {{$package->name}} </td>
-                        <td> {{$package->title}} </td>
-                        <td> {!!$package->description!!} </td>
-                        <td>{{$package->starts_at}}</td>
-                        <td>{{$package->meta_title}}</td>
-                        <td>{!!$package->meta_description!!}</td>
-                        <td> <img src="{{(!empty($package->image))?url('upload/package_image/'.$package->image):url('upload/noimage.png')}}" width="120px" height="130px" alt="slider"> </td>
+                        <td> {{$element->category}} </td>
+                        <td> {{$element->name}} </td>
+                        <td> {{$element->title}} </td>
+                        <td> {!!$element->description!!} </td>
+                        <td>{{$element->starts_at}}</td>
+                        <td>{{$element->meta_title}}</td>
+                        <td>{!!$element->meta_description!!}</td>
+                        <td> <img src="{{(!empty($element->image))?url('upload/element_image/'.$element->image):url('upload/noimage.png')}}" width="120px" height="130px" alt="slider"> </td>
                         
-                        <td> <img src="{{(!empty($package->meta_image))?url('upload/package_image/meta_image/'.$package->meta_image):url('upload/noimage.png')}}" width="120px" height="130px" alt="slider"> </td>
+                        
                         
 
                         
                         <td> 
-                   				<a title="edit" class="btn btn-primary" href="{{route('package.edit',$package->id)}} "><i class="fa fa-edit"></i></a>
-                   				<a title="delete" id="delete" class="btn btn-danger" href=" {{route('package.delete',$package->id)}} "><i class="fa fa-trash"></i></a>
+                   				<a title="edit" class="btn btn-primary" href="{{route('element.edit',$element->id)}} "><i class="fa fa-edit"></i></a>
+                   				<a title="delete" id="delete" class="btn btn-danger" href=" {{route('element.delete',$element->id)}} "><i class="fa fa-trash"></i></a>
 
                    			</td>
                       </tr>

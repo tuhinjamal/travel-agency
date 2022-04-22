@@ -63,4 +63,15 @@ Route::group(['namespace'=>'App\Http\Controllers','middleware'=>'is_admin'],func
 
     });
     
+
+    Route::prefix('element')->group(function(){
+        Route::get('/view','ElementController@view')->name('element.view');
+        Route::get('/add','ElementController@add')->name('element.add');
+        Route::post('/store','ElementController@store')->name('element.store');
+        Route::get('/edit/{id}','ElementController@edit')->name('element.edit');
+        Route::post('/update/{id}','ElementController@update')->name('element.update');
+        Route::get('/delete/{id}','ElementController@delete')->name('element.delete');
+
+    });
+    
 });
