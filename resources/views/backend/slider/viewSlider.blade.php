@@ -24,46 +24,29 @@
                   Package List
                   
                 </h3>
-                @if($elementcount<1)
-                <a class="btn btn-success float-right btn-sm" href=" {{route('element.add')}} "> <i class="fa fa-plus-circle"></i> Add Contact/logo</a>
-                @endif
+                <a class="btn btn-success float-right btn-sm" href=" {{route('slider.add')}} "> <i class="fa fa-plus-circle"></i> Add Slider</a>
               </div><!-- /.card-header -->
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-hover">
                     <thead>
                       <tr>
                         <th>SL.</th>
-                        <th>title</th>
-                        <th>email</th>
-                        <th>phone-1</th>
-                        <th>Phone-2</th>
-                        <th>Phone-3</th>
-                        <th>address</th>
-                        <th>website</th>
-                        <th>Logo</th>
+                        <th>Main title</th>
+                        <th>Subtitle</th>
+                        <th>Image</th>                        
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($data as $key=>$element)
+                      @foreach($data as $key=>$slider)
                       <tr>
                         <td> {{$key+1}} </td>
-                        
-                        <td> {{$element->title}} </td>
-                        <td> {{$element->email}} </td>
-                        <td> {{$element->phone_1}} </td>
-                        <td> {{$element->phone_2}} </td>
-                        <td> {{$element->phone_3}} </td>
-                        <td> {{$element->address}} </td>
-                        <td> {!!$element->website!!} </td>
-                        <td> {{$element->logo}} </td>
+                        <td> {{$slider->title_1}} </td>
+                        <td> {{$slider->title_2}} </td>
+                        <td> <img src="{{(!empty($slider->image))?url('upload/slider_image/'.$slider->image):url('upload/noimage.png')}}" width="120px" height="130px" alt="slider"> </td>
                         <td> 
-                        <img src="{{(!empty($element->image))?url('upload/element_image/'.$element->image):url('upload/noimage.png')}}" width="100px" height="100px" alt="slider"> 
-                        </td>
-                        
-                        <td> 
-                   				<a title="edit" class="btn btn-primary" href="{{route('element.edit',$element->id)}} "><i class="fa fa-edit"></i></a>
-                   				<a title="delete" id="delete" class="btn btn-danger" href=" {{route('element.delete',$element->id)}} "><i class="fa fa-trash"></i></a>
+                   				<a title="edit" class="btn btn-primary" href="{{route('slider.edit',$slider->id)}} "><i class="fa fa-edit"></i></a>
+                   				<a title="delete" id="delete" class="btn btn-danger" href=" {{route('slider.delete',$slider->id)}} "><i class="fa fa-trash"></i></a>
 
                    			</td>
                       </tr>

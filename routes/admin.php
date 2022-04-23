@@ -73,5 +73,15 @@ Route::group(['namespace'=>'App\Http\Controllers','middleware'=>'is_admin'],func
         Route::get('/delete/{id}','ElementController@delete')->name('element.delete');
 
     });
+
+    Route::prefix('slider')->group(function(){
+        Route::get('/view','SliderController@view')->name('slider.view');
+        Route::get('/add','SliderController@add')->name('slider.add');
+        Route::post('/store','SliderController@store')->name('slider.store');
+        Route::get('/edit/{id}','SliderController@edit')->name('slider.edit');
+        Route::post('/update/{id}','SliderController@update')->name('slider.update');
+        Route::get('/delete/{id}','SliderController@delete')->name('slider.delete');
+
+    });
     
 });

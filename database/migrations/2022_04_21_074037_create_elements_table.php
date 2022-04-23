@@ -16,6 +16,7 @@ class CreateElementsTable extends Migration
         Schema::create('elements', function (Blueprint $table) {
             $table->id();
             $table->string('image')->nullable();
+            $table->string('email')->nullable();
             $table->string('phone_1')->nullable();
             $table->string('phone_2')->nullable();
             $table->string('phone_3')->nullable();

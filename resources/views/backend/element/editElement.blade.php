@@ -53,7 +53,8 @@
                         <div class="form-group col-md-12">
 
                             <label for="title">title</label>
-                            <input id="title" type="text" value=" {{ $editData->title}}" name="title" class="form-control  required">
+                            <input id="title" type="text" value=" {{ $editData->title}}" name="title"
+                                class="form-control  required">
                             <font style="color: red">
                                 {{($errors->has('title') )?($errors->first('title')):''}}</font>
 
@@ -63,7 +64,8 @@
                         <div class="form-group col-md-12">
 
                             <label for="phone_1">phone-1</label>
-                            <input id="phone_1" type="text" value=" {{ $editData->phone_1}}" name="phone_1" class="form-control  required">
+                            <input id="phone_1" type="text" value=" {{ $editData->phone_1}}" name="phone_1"
+                                class="form-control  required">
                             <font style="color: red">
                                 {{($errors->has('phone_1') )?($errors->first('phone_1')):''}}</font>
 
@@ -71,7 +73,8 @@
                         <div class="form-group col-md-12">
 
                             <label for="phone_2">phone-2</label>
-                            <input id="phone_2" type="text" value=" {{ $editData->phone_2}}" name="phone_2" class="form-control  required">
+                            <input id="phone_2" type="text" value=" {{ $editData->phone_2}}" name="phone_2"
+                                class="form-control  required">
                             <font style="color: red">
                                 {{($errors->has('phone_2') )?($errors->first('phone_2')):''}}</font>
 
@@ -79,7 +82,8 @@
                         <div class="form-group col-md-12">
 
                             <label for="phone_3">phone-3</label>
-                            <input id="phone_3" type="text" value=" {{ $editData->phone_3}}" name="phone_3" class="form-control  required">
+                            <input id="phone_3" type="text" value=" {{ $editData->phone_3}}" name="phone_3"
+                                class="form-control  required">
                             <font style="color: red">
                                 {{($errors->has('phone_3') )?($errors->first('phone_3')):''}}</font>
 
@@ -89,9 +93,18 @@
                         <div class="form-group col-md-12">
 
                             <label for="address">Address</label>
-                            <input id="address" type="text"value=" {{ $editData->address}}" name="address" class="form-control  required">
+                            <input id="address" type="text" value=" {{ $editData->address}}" name="address"
+                                class="form-control  required">
                             <font style="color: red">
                                 {{($errors->has('address') )?($errors->first('address')):''}}</font>
+
+                        </div>
+                        <div class="form-group col-md-12">
+
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" value=" {{ $editData->email}}" class="form-control  required">
+                            <font style="color: red">
+                                {{($errors->has('email') )?($errors->first('email')):''}}</font>
 
                         </div>
 

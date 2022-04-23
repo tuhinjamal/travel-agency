@@ -21,14 +21,14 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-user mr-1"></i>
-                                Add element
+                                Add Slider
 
                             </h3>
-                            <a class="btn btn-success float-right btn-sm" href=" {{route('element.view')}} "> <i
-                                    class="fa fa-list"></i> View elements</a>
+                            <a class="btn btn-success float-right btn-sm" href=" {{route('slider.view')}} "> <i
+                                    class="fa fa-list"></i> View Slider</a>
                         </div><!-- /.card-header -->
                         <div class="card-body">
-                            <form method="POST" action="{{route('element.store')}}" enctype="multipart/form-data"
+                            <form method="POST" action="{{route('slider.store')}}" enctype="multipart/form-data"
                                 id="myform">
                                 @csrf
 
@@ -36,72 +36,21 @@
 
                                     <div class="form-group col-md-12">
 
-                                        <label for="title">title</label>
-                                        <input id="title" type="text" name="title" class="form-control  required">
+                                        <label for="title_1">Maintitle</label>
+                                        <input id="title_1" type="text" name="title_1" class="form-control  required">
                                         <font style="color: red">
-                                            {{($errors->has('title') )?($errors->first('title')):''}}</font>
-
-                                    </div>
-
-
-                                    <div class="form-group col-md-12">
-
-                                        <label for="phone_1">phone-1</label>
-                                        <input id="phone_1" type="text" name="phone_1" class="form-control  required">
-                                        <font style="color: red">
-                                            {{($errors->has('phone_1') )?($errors->first('phone_1')):''}}</font>
-
-                                    </div>
-                                    <div class="form-group col-md-12">
-
-                                        <label for="phone_2">phone-2</label>
-                                        <input id="phone_2" type="text" name="phone_2" class="form-control  required">
-                                        <font style="color: red">
-                                            {{($errors->has('phone_2') )?($errors->first('phone_2')):''}}</font>
-
-                                    </div>
-                                    <div class="form-group col-md-12">
-
-                                        <label for="phone_3">phone-3</label>
-                                        <input id="phone_3" type="text" name="phone_3" class="form-control  required">
-                                        <font style="color: red">
-                                            {{($errors->has('phone_3') )?($errors->first('phone_3')):''}}</font>
-
-                                    </div>
-
-
-                                    <div class="form-group col-md-12">
-
-                                        <label for="address">Address</label>
-                                        <input id="address" type="text" name="address" class="form-control  required">
-                                        <font style="color: red">
-                                            {{($errors->has('address') )?($errors->first('address')):''}}</font>
+                                            {{($errors->has('title_1') )?($errors->first('title_1')):''}}</font>
 
                                     </div>
 
                                     <div class="form-group col-md-12">
 
-                                        <label for="email">Email</label>
-                                        <input id="email" type="email" name="email" class="form-control  required">
+                                        <label for="title_2">Subtitle</label>
+                                        <input id="title_2" type="text" name="title_2" class="form-control  required">
                                         <font style="color: red">
-                                            {{($errors->has('email') )?($errors->first('email')):''}}</font>
+                                            {{($errors->has('title_2') )?($errors->first('title_2')):''}}</font>
 
                                     </div>
-
-                                    <div class="form-group col-md-12">
-
-                                        <label for="website">website</label>
-                                        <textarea name="website" class="form-control  required" id="editor" cols="30"
-                                            rows="5"></textarea>
-                                        <!-- <input id="name" type="text" name="name" class="form-control  required"> -->
-                                        <font style="color: red">
-                                            {{($errors->has('website') )?($errors->first('website')):''}}</font>
-
-                                    </div>
-
-
-
-
 
                                     <div class="form-group col-md-12">
 
@@ -112,27 +61,15 @@
                                     <div class="form-group col-md-6">
 
                                         <img id="showimage"
-                                            src="{{(!empty($editData->image))?url('upload/element_image/'.$editData->image):url('upload/noimage.png')}}"
+                                            src="{{(!empty($editData->image))?url('upload/slider_image/'.$editData->image):url('upload/noimage.png')}}"
                                             style="width: 150px;height: 160px; border:1px solid #000;">
 
                                     </div>
-
-
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group col-md-6">
 
                                         <input type="submit" value="submit" class="btn btn-primary">
-
-
-
                                     </div>
-
-
-
-
                                 </div>
-
-
-
                             </form>
                         </div>
 
@@ -224,6 +161,7 @@
             }
         });
     });
+
 </script>
 
 <script>
@@ -238,6 +176,7 @@
         .catch(error => {
             console.error(error);
         });
+
 </script>
 
 @endsection

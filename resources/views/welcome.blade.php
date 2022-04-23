@@ -60,7 +60,7 @@ $count=1;
 
                     <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
                         <div class="logo pull-left">
-                            <a href="index.html"><img alt="Image" src="images/Yatra-01.png"></a>
+                            <a href="#"><img alt="Image" src="{{url('upload/element_image/'.$elements[0]->image)}}" width="250px" height="50px" ></a>
                         </div>
                         <div id="navbar" class="navbar-nav-wrapper">
                             <ul class="nav navbar-nav" id="responsive-menu">
@@ -71,12 +71,12 @@ $count=1;
                                 </li>
 
                                 <li>
-                                    <a href="hotel.html">Umrah <i class="fa fa-angle-down"></i></a>
+                                    <a href="#umrah">Umrah <i class="fa fa-angle-down"></i></a>
 
                                 </li>
 
                                 <li>
-                                    <a href="hotel.html">Hajj <i class="fa fa-angle-down"></i></a>
+                                    <a href="#hajj">Hajj <i class="fa fa-angle-down"></i></a>
 
                                 </li>
 
@@ -98,7 +98,7 @@ $count=1;
                                 </li>
 
                                 <li>
-                                    <a href="hotel.html">Contact US <i class="fa fa-angle-down"></i></a>
+                                    <a href="#contact">Contact US <i class="fa fa-angle-down"></i></a>
 
                                 </li>
 
@@ -126,32 +126,25 @@ $count=1;
 
     <section class="swiper-banner">
         <div class="slider">
+        
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(images/slider/slider7.jpg)">
+                @foreach($sliders as $slider)
+                    <div class="swiper-slide" style="background-image:url('{{ asset('upload/slider_image/'.$slider->image)}}')">
                         <div class="swiper-content" data-animation="animated fadeInDown">
-                            <h2>Book a ticket & Just Leave</h2>
-                            <h1>Search your next destination</h1>
+                            <h2>{{$slider->title_1}}</h2>
+                            <h1>{{$slider->title_2}}</h1>
                             <a href="tour-detail.html" class="btn-blue btn-red">View Our Tour</a>
                         </div>
                     </div>
-                    <div class="swiper-slide" style="background-image:url(images/slider/slider2.jpg)">
-                        <div class="swiper-content" data-animation="animated fadeInRight">
-                            <h2>Cost friendly packages on your way</h2>
-                            <h1>We offer you better deals</h1>
-                            <a href="tour-detail.html" class="btn-blue btn-red">View Our Tour</a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" style="background-image:url(images/slider/slider3.jpg)">
-                        <div class="swiper-content" data-animation="animated fadeInUp">
-                            <h2>exciting schemes just a click away</h2>
-                            <h1>Amazing Santorini 7 days tour</h1>
-                            <a href="tour-detail.html" class="btn-blue btn-red">View Our Tour</a>
-                        </div>
-                    </div>
+                @php
+                $count++
+                @endphp
+                @endforeach
+                   
+                   
                 </div>
             </div>
-
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="overlay"></div>
@@ -166,9 +159,9 @@ $count=1;
             <div class="search-outer ">
                 <div class="search-content">
                     <form>
-                        <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center ">
                             <div class="col-lg-3 col-md-12">
-                                <div class="search-title d-flex align-items-center justify-content-between bg-info">
+                                <div class="search-title d-flex align-items-center justify-content-between bg-success">
                                     <p>Buil your <span>own package</span></p>
                                     <i class="flaticon-sun-umbrella "></i>
                                 </div>
@@ -190,7 +183,7 @@ $count=1;
                                     </div>
 
                                     <div class="search">
-                                        <a href="#" class="btn-blue btn-green">Start</a>
+                                        <a href="#" class="btn-blue btn-green col-md-5 mt-4">Start</a>
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +213,7 @@ $count=1;
             <h2>{{$first[0]->name}}</h2>
            
             
-            <section class="blog pb-5">
+            <section class="blog pb-5" id="hajj">
              
                 <div class="container">
                     <div class="row">
@@ -256,7 +249,7 @@ $count=1;
 
             <!-- Hajj packge  -->
             <h2>{{$second[0]->name}}</h2>
-            <section class="blog pb-5">
+            <section class="blog pb-5" id="umrah">
              
                 <div class="container">
                     <div class="row">
@@ -409,45 +402,60 @@ $count=1;
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-4">
+                    @foreach($umrah as $package)  
                     <div class="top-destination-item">
-                        <img class="img-responsive" src="images/deal1.jpg" alt="Image">
+                        <img class="img-responsive" src="{{url('upload/package_image/'.$package->image)}}" alt="Image">
                         <div class="overlay">
-                            <h2><a href="tour-detail.html">Bahamas</a></h2>
-                            <p>Plan Your Tour to Bahamas With Us.</p>
+                            <h2><a href="tour-detail.html">{{$package->name}}</a></h2>
+                            <p>{{$package->title}}</p>
                         </div>
                     </div>
                     <div class="top-destination-item">
-                        <img class="img-responsive" src="images/deal2.jpg" alt="Image">
+                        <img class="img-responsive" src="{{url('upload/package_image/'.$package->image)}}" alt="Image">
                         <div class="overlay">
-                            <h2><a href="tour-detail.html">Italy</a></h2>
-                            <p>Plan Your Tour to Bahamas With Us.</p>
+                            <h2><a href="tour-detail.html">{{$package->name}}</a></h2>
+                            <p>{{$package->title}}</p>
                         </div>
                     </div>
+                    @php
+                    $count++
+                    @endphp
+                   @endforeach
                 </div>
                 <div class="col-lg-4 col-md-4">
+                @foreach($hajj as $package)  
                     <div class="top-destination-item destination-margin">
-                        <img class="img-responsive" src="images/deal5.jpg" alt="Image">
+                        <img class="img-responsive" src="{{url('upload/package_image/'.$package->image)}}" Height="698px" alt="Image">
                         <div class="overlay overlay-full">
-                            <h2><a href="tour-detail.html">Egypt</a></h2>
-                            <p>Plan Your Tour to Bahamas With Us.</p>
+                            <h2><a href="tour-detail.html">{{$package->name}}</a></h2>
+                            <p>{{$package->title}}</p>
                         </div>
                     </div>
+                    @php
+                $count++
+                @endphp
+                @endforeach
                 </div>
                 <div class="col-lg-4 col-md-4">
+                @foreach($tour as $package)  
                     <div class="top-destination-item">
-                        <img class="img-responsive" src="images/deal3.jpg" alt="Image">
+                        <img class="img-responsive" src="{{url('upload/package_image/'.$package->image)}}" Height="346px" alt="Image">
                         <div class="overlay">
-                            <h2><a href="tour-detail.html">Nepal</a></h2>
-                            <p>Plan Your Tour to Bahamas With Us.</p>
+                            <h2><a href="tour-detail.html">{{$package->name}}</a></h2>
+                            <p>{{$package->title}}</p>
                         </div>
                     </div>
                     <div class="top-destination-item">
-                        <img class="img-responsive" src="images/deal4.jpg" alt="Image">
+                        <img class="img-responsive" src="{{url('upload/package_image/'.$package->image)}}" Height="346px" alt="Image">
                         <div class="overlay">
-                            <h2><a href="tour-detail.html">Thailand</a></h2>
-                            <p>Plan Your Tour to Bahamas With Us.</p>
+                            <h2><a href="tour-detail.html">{{$package->name}}</a></h2>
+                            <p>{{$package->title}}</p>
                         </div>
                     </div>
+                @php
+                $count++
+                @endphp
+                @endforeach
                 </div>
             </div>
         </div>
@@ -589,22 +597,19 @@ $count=1;
 
     <footer>
 
-        <div class="footer-links">
+        <div class="footer-links" id="contact">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer-about footer-margin">
                         <div class="about-logo">
-                            <img src="images/Yatra-white.png" alt="Image">
+                            <img src="{{url('upload/element_image/'.$elements[0]->image)}}" width="150px" height="150px" alt="Image">
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt.</p>
+                        <p>{{$elements[0]->title }}</p>
                         <div class="about-location">
                             <ul>
-                                <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i> Location</li>
-                                <li><i class="flaticon-phone-call"></i> (012)-345-6789</li>
-                                <li><i class="flaticon-mail"></i> <a href="/cdn-cgi/l/email-protection"
-                                        class="__cf_email__"
-                                        data-cfemail="52263d27203c26203324373e12263721263f333b3e7c313d3f">[email&#160;protected]</a>
+                                <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i> {{$elements[0]->address }}</li>
+                                <li><i class="flaticon-phone-call"></i> +88 {{$elements[0]->phone_1 }}</li>
+                                <li><i class="flaticon-mail"></i> <a href="#">{{$elements[0]->email }}</a>
                                 </li>
                             </ul>
                         </div>

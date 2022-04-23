@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\PackageController;
 use App\Models\Package;
+use App\Models\Slider;
+use App\Models\Element;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,6 +12,11 @@ use DB;
 class FrontendController extends Controller
 {
     public function view(){
+
+        //slider is here
+        $data['sliders'] = Slider::all(); 
+        //elements is here
+        $data['elements'] = Element::all(); 
         
         //$data['packages'] = Package::all();
         $data['hajj'] = DB::table('packages')
