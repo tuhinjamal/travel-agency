@@ -60,6 +60,7 @@ Route::group(['namespace'=>'App\Http\Controllers','middleware'=>'is_admin'],func
         Route::get('/edit/{id}','PackageController@edit')->name('package.edit');
         Route::post('/update/{id}','PackageController@update')->name('package.update');
         Route::get('/delete/{id}','PackageController@delete')->name('package.delete');
+        Route::get('/detail/{id}','PackageController@detail')->name('package.detail');
 
     });
     

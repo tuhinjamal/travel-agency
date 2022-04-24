@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Package;
+use App\Models\Element;
 use Auth;
 use DB;
 
@@ -125,4 +126,14 @@ class PackageController extends Controller
         
         return redirect()->route('package.view');
     }
+
+    public function detail($id)
+    {   
+        
+        $data['elements'] = Element::all(); 
+        $data['package'] = Package::find($id);
+        return view('detail',$data);
+    }
+
+   
 }

@@ -41,4 +41,5 @@ class FrontendController extends Controller
        
    return view('welcome',$data);
    }
+   
 }

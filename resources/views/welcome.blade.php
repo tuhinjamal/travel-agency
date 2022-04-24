@@ -12,15 +12,15 @@ $count=1;
     <!-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo1.png') }}"> -->
     <link rel="shortcut icon" href="{{ asset('images/logo1.png') }}"  type='image/x-icon'>
     
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css">
 
-    <link href="font/flaticon.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('font/flaticon.css')}}" rel="stylesheet" type="text/css">
 
-    <link href="css/plugin.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/plugin.css')}}" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="../../../ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('../../../ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')}}">
     <script async="" src='/cdn-cgi/challenge-platform/h/b/scripts/invisible.js?ts=1650085200'></script>
 </head>
 
@@ -230,6 +230,7 @@ $count=1;
                                     </div>
                                     <h3><a href="#">{{$package->title}}</a></h3>
                                     <p>{!! $package->description!!}</p>
+                                    <a title="edit" class="btn btn-primary" href="{{route('package.detail',$package->id)}} ">view detail</a>
                                     
                                 </div>
                    
