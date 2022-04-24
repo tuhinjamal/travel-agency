@@ -59,6 +59,7 @@ $count=1;
                 <div class="header_menu">
 
                     <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
+                        
                         <div class="logo pull-left">
                             <a href="#"><img alt="Image" src="{{url('upload/element_image/'.$elements->image)}}" width="250px" height="50px" ></a>
                         </div>
