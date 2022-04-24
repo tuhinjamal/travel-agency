@@ -44,9 +44,9 @@
                         	</div>
 	                        <div class="form-group col-md-12">
 
-	                        		<label for="title" >title</label>
-	                        		<input id="title" type="text" name="title" class="form-control  required">
-	                        		<font style="color: red"> {{($errors->has('title') )?($errors->first('title')):''}}</font>
+	                        		<label for="titlee" >title</label>
+	                        		<input id="titlee" type="text" name="titlee" class="form-control  required">
+	                        		<font style="color: red"> {{($errors->has('titlee') )?($errors->first('titlee')):''}}</font>
 
 	                        </div>
 

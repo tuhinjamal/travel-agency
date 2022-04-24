@@ -29,14 +29,15 @@ class PackageController extends Controller
 
     }
     public function store(Request $request){
+
         $this->validate($request,[
-            'title' => 'required',
+            'titlee' => 'required',
             'description' => 'required',
 
         ]);
         $data = new Package();
         $data->category = $request->category;
-        $data->title = $request->title;
+        $data->titlee = $request->titlee;
         $data->name = $request->name;
         $data->description = $request->description;
         $data->starts_at = $request->starts_at;
@@ -83,7 +84,7 @@ class PackageController extends Controller
 
         $data = Package::find($id);
         $data->category = $request->category;
-        $data->title = $request->title;
+        $data->titlee = $request->titlee;
         $data->description = $request->description;
         $data->starts_at = $request->starts_at;
         $data->meta_title = $request->meta_title;
