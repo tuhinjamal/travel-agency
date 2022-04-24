@@ -60,7 +60,7 @@ $count=1;
 
                     <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
                         <div class="logo pull-left">
-                            <a href="#"><img alt="Image" src="{{url('upload/element_image/'.$elements[0]->image)}}" width="250px" height="50px" ></a>
+                            <a href="#"><img alt="Image" src="{{url('upload/element_image/'.$elements->image)}}" width="250px" height="50px" ></a>
                         </div>
                         <div id="navbar" class="navbar-nav-wrapper">
                             <ul class="nav navbar-nav" id="responsive-menu">
@@ -603,14 +603,14 @@ $count=1;
                 <div class="col-lg-3">
                     <div class="footer-about footer-margin">
                         <div class="about-logo">
-                            <img src="{{url('upload/element_image/'.$elements[0]->image)}}" width="150px" height="150px" alt="Image">
+                            <img src="{{url('upload/element_image/'.$elements->image)}}" width="150px" height="150px" alt="Image">
                         </div>
-                        <p>{{$elements[0]->title }}</p>
+                        <p>{{$elements->title }}</p>
                         <div class="about-location">
                             <ul>
-                                <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i> {{$elements[0]->address }}</li>
-                                <li><i class="flaticon-phone-call"></i> +88 {{$elements[0]->phone_1 }}</li>
-                                <li><i class="flaticon-mail"></i> <a href="#">{{$elements[0]->email }}</a>
+                                <li><i class="flaticon-maps-and-flags" aria-hidden="true"></i> {{$elements->address }}</li>
+                                <li><i class="flaticon-phone-call"></i> +88 {{$elements->phone_1 }}</li>
+                                <li><i class="flaticon-mail"></i> <a href="#">{{$elements->email }}</a>
                                 </li>
                             </ul>
                         </div>

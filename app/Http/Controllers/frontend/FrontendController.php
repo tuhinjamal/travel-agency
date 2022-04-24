@@ -16,7 +16,7 @@ class FrontendController extends Controller
         //slider is here
         $data['sliders'] = Slider::all(); 
         //elements is here
-        $data['elements'] = Element::all(); 
+        $data['elements'] = Element::first(); 
         
         //$data['packages'] = Package::all();
         $data['hajj'] = DB::table('packages')
