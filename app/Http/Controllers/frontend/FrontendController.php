@@ -24,19 +24,19 @@ class FrontendController extends Controller
                     ->get();
         $data['first'] =   DB::table('packages')
         ->where('category', '=', 0)
-        ->get();
+        ->first();
         $data['umrah'] = DB::table('packages')
                     ->where('category', '=', 1)
                     ->get();
         $data['second'] =   DB::table('packages')
                     ->where('category', '=', 1)
-                    ->get();
+                    ->first();
         $data['tour'] = DB::table('packages')
                     ->where('category', '=', 2)
                     ->get();
         $data['third'] =   DB::table('packages')
             ->where('category', '=', 2)
-            ->get();
+            ->first();
         
        
    return view('welcome',$data);
