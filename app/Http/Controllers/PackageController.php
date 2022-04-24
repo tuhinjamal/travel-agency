@@ -127,13 +127,7 @@ class PackageController extends Controller
         return redirect()->route('package.view');
     }
 
-    public function detail($id)
-    {   
-        
-        $data['elements'] = Element::all(); 
-        $data['package'] = Package::find($id);
-        return view('detail',$data);
-    }
+    
 
    
 }
