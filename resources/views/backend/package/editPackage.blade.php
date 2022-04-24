@@ -59,8 +59,8 @@
                         	</div>
 	                        <div class="form-group col-md-4">
 
-	                        		<label for="titlee" >title</label>
-	                        		<input id="titlee" type="text" name="titlee" value=" {{ $editData->titlee}}" class="form-control  required">
+	                        		<label for="title" >title</label>
+	                        		<input id="title" type="text" name="title" value=" {{ $editData->title}}" class="form-control  required">
 	                        		<font style="color: red"> {{($errors->has('name') )?($errors->first('name')):''}}</font>
 
 	                        </div>

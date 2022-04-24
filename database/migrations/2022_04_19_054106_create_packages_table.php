@@ -17,7 +17,7 @@ class CreatePackagesTable extends Migration
             $table->id();
             $table->integer('category')->nullable();
             $table->string('name');
-            $table->string('tittle');
+            $table->string('title');
             $table->longtext('description')->nullable();
             $table->string('starts_at')->nullable();
             $table->string('image')->nullable();
