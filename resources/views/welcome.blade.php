@@ -211,7 +211,7 @@ $count=1;
                     et dolore magna aliqua.Duis aute irure dolor in reprehenderit..</p>
             </div>
           
-            <h2>{{$first->name}}</h2>
+            <h2>{{optional($first)->name}}</h2>
            
             
             <section class="blog pb-5" id="hajj">
@@ -250,7 +250,7 @@ $count=1;
             
 
             <!-- Hajj packge  -->
-            <h2>{{$second->name}}</h2>
+            <h2>{{optional($second)->name}}</h2>
             <section class="blog pb-5" id="umrah">
              
                 <div class="container">
