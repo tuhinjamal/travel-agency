@@ -14,4 +14,12 @@ class DetailController extends Controller
         $data['package'] = Package::find($id);
         return view('detail',$data);
     }
+
+    public function ownpackage($id)
+    {   
+        
+        $data['elements'] = Element::all(); 
+        $data['package'] = Package::find($id);
+        return view('detail',$data);
+    }
 }
