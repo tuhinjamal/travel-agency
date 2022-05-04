@@ -71,13 +71,29 @@
                               <font style="color: red"> {{($errors->has('meta_title') )?($errors->first('meta_title')):''}}</font>
 
                           </div>
-                          <div class="form-group col-md-4">
+                          <div class="form-group col-md-12">
 
 	                        		<label for="name" >name</label>
 	                        		<input id="name" type="text" name="name" value=" {{ $editData->name}}" class="form-control  required">
 	                        		<font style="color: red"> {{($errors->has('name') )?($errors->first('name')):''}}</font>
 
 	                        </div>
+                          <div class="form-group col-md-12">
+
+                                        <label for="alt">alt</label>
+                                        <input id="alt" type="text" name="alt" value=" {{ $editData->alt}}"  class="form-control  required">
+                                        <font style="color: red">
+                                            {{($errors->has('alt') )?($errors->first('alt')):''}}</font>
+
+                                    </div>
+                                    <div class="form-group col-md-12">
+
+                                        <label for="span">span</label>
+                                        <input id="span" type="text" name="span" value=" {{ $editData->span}}"  class="form-control  required">
+                                        <font style="color: red">
+                                            {{($errors->has('span') )?($errors->first('span')):''}}</font>
+
+                                    </div>
 
                              <div class="form-group col-md-4">
 
@@ -90,26 +106,26 @@
                            
 
 
-                          <div class="form-group col-md-4">
+                          <div class="form-group col-md-12">
 
                         		<label for="image">Image</label>
                         		<input type="file" name="image" class="form-control" id="image">
 
                         	</div>
-                        	<div class="form-group col-md-2">
+                        	<div class="form-group col-md-12">
 
                         		<img id="showimage" src="{{(!empty($editData->image))?url('upload/package_image/'.$editData->image):url('upload/noimage.png')}}" style="width: 150px;height: 160px; border:1px solid #000;">
 
                         	</div>
 
 
-                          <div class="form-group col-md-4">
+                          <div class="form-group col-md-12">
 
                             <label for="image">Image</label>
                             <input type="file" name="meta_image" class="form-control" id="image">
 
                             </div>
-                            <div class="form-group col-md-2">
+                            <div class="form-group col-md-12">
 
                             <img id="showimage" src="{{(!empty($editData->meta_image))?url('upload/package_image/meta_image/'.$editData->meta_image):url('upload/noimage.png')}}" style="width: 150px;height: 160px; border:1px solid #000;">
 

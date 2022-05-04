@@ -37,6 +37,8 @@ class PackageController extends Controller
         $data = new Package();
         $data->category = $request->category;
         $data->title = $request->title;
+        $data->alt = $request->alt;
+        $data->span = $request->span;
         $data->name = $request->name;
         $data->description = $request->description;
         $data->starts_at = $request->starts_at;
@@ -84,6 +86,8 @@ class PackageController extends Controller
         $data = Package::find($id);
         $data->category = $request->category;
         $data->title = $request->title;
+        $data->alt = $request->alt;
+        $data->span = $request->span;
         $data->description = $request->description;
         $data->starts_at = $request->starts_at;
         $data->meta_title = $request->meta_title;

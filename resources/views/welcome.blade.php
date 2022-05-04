@@ -1,131 +1,9 @@
+@extends('homelayout.layout')
+@section('content')
 @php
 $count=1;
 @endphp
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Jamjam travels </title>
-    
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo1.png') }}"> -->
-    <link rel="shortcut icon" href="{{ asset('images/logo1.png') }}"  type='image/x-icon'>
-    
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
-
-    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css">
-
-    <link href="{{asset('font/flaticon.css')}}" rel="stylesheet" type="text/css">
-
-    <link href="{{asset('css/plugin.css')}}" rel="stylesheet" type="text/css">
-
-    <link rel="stylesheet" href="{{asset('../../../ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')}}">
-    <script async="" src='/cdn-cgi/challenge-platform/h/b/scripts/invisible.js?ts=1650085200'></script>
-</head>
-
-<body>
-
-
-
-
-    <header>
-        <div class="upper-head clearfix">
-            <div class="container">
-                <!-- <div class="contact-info">
-<p><i class="flaticon-phone-call"></i> Phone: (012)-345-6789</p>
-<p><i class="flaticon-mail"></i> Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb8f948e89958f899a8d9e97bb8f9e888f969a9297d5989496">[email&#160;protected]</a></p>
-</div> -->
-@if (Route::has('login'))
-                <div class="login-btn text-right">
-     @auth
-                    <a href="{{ url('/home') }}"><i class="fa fa-unlock-alt"></i> Home </a>
-    @else
-                    <a href="{{ route('login') }}"><i class="fa fa-user-plus"></i> Login</a>
-    @if (Route::has('register'))
-                    <a href="{{ route('register') }}"><i class="fa fa-unlock-alt"></i> Register</a>
-    @endif                
-                </div>
-            </div>
-        </div>
-    @endauth
-@endif
-    </header>
-
-
-    <div class="navigation">
-        <div class="container">
-            <div class="navigation-content">
-                <div class="header_menu">
-
-                    <nav class="navbar navbar-default navbar-sticky-function navbar-arrow">
-                        
-                        <div class="logo pull-left">
-                            <a href="#"><img alt="Image" src="{{url('upload/element_image/'.$elements->image)}}" width="250px" height="50px" ></a>
-                        </div>
-                        <div id="navbar" class="navbar-nav-wrapper">
-                            <ul class="nav navbar-nav" id="responsive-menu">
-
-                                <li>
-                                    <a href="#">Home <i class="fa fa-angle-down"></i></a>
-
-                                </li>
-
-                                <li>
-                                    <a href="#umrah">Umrah <i class="fa fa-angle-down"></i></a>
-
-                                </li>
-
-                                <li>
-                                    <a href="#hajj">Hajj <i class="fa fa-angle-down"></i></a>
-
-                                </li>
-
-
-
-                                <li>
-                                    <a href="hotel.html">Services <i class="fa fa-angle-down"></i></a>
-                                    <ul>
-                                        <li> <a href="hotel.html">Hotel Homepage</a></li>
-                                        <li> <a href="grid-view.html">Grid View</a></li>
-                                        <li><a href="list-view.html">List View</a></li>
-                                        <li><a href="hotel-detail.html">Detail Page</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <a href="hotel.html">Gallery <i class="fa fa-angle-down"></i></a>
-
-                                </li>
-
-                                <li>
-                                    <a href="#contact">Contact US <i class="fa fa-angle-down"></i></a>
-
-                                </li>
-
-                                <li>
-                                    <a href="hotel.html">Newsteller <i class="fa fa-angle-down"></i></a>
-                                    <ul>
-                                        <li> <a href="hotel.html">Blog</a></li>
-                                        <li> <a href="grid-view.html">News</a></li>
-
-                                    </ul>
-                                </li>
-
-
-
-
-                            </ul>
-                        </div>
-                        <div id="slicknav-mobile"></div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <section class="swiper-banner">
+<section class="swiper-banner">
         <div class="slider">
         
             <div class="swiper-container">
@@ -162,9 +40,10 @@ $count=1;
                     <form>
                         <div class="row d-flex justify-content-center ">
                             <div class="col-lg-3 col-md-12">
-                                <div class="search-title d-flex align-items-center justify-content-between bg-success">
+                                <div class="search-title d-flex align-items-center justify-content-between bg-primary">
                                     <p>Buil your <span>own package</span></p>
-                                    <i class="flaticon-sun-umbrella "></i>
+                                    <i class="fa fa-building" aria-hidden="true" style="font-size:48px;"></i>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 align-items-center">
@@ -184,7 +63,7 @@ $count=1;
                                     </div>
 
                                     <div class="search">
-                                        <a href="#" class="btn-blue btn-green col-md-5 mt-4">Start</a>
+                                        <a href="#" class="btn-blue btn-green">Start</a>
                                     </div>
                                 </div>
                             </div>
@@ -223,7 +102,7 @@ $count=1;
 
                             <div class="blog-item">
                                 <div class="blog-image">
-                                    <img src="{{url('upload/package_image/'.$package->image)}}" alt="Image">
+                                    <img src="{{url('upload/package_image/'.$package->image)}}" height="300" width="200" alt="{{$package->alt}}">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-date">
@@ -260,7 +139,7 @@ $count=1;
 
                             <div class="blog-item">
                                 <div class="blog-image">
-                                    <img src="{{url('upload/package_image/'.$package->image)}}" alt="Image">
+                                    <img src="{{url('upload/package_image/'.$package->image)}}" height="300" width="200" alt="{{$package->alt}}">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-date">
@@ -268,6 +147,7 @@ $count=1;
                                     </div>
                                     <h3><a href="#">{{$package->title}}</a></h3>
                                     <p>{!! $package->description!!}</p>
+                                    <a title="edit" class="btn btn-primary" href="{{route('package.detail',$package->id)}} ">view detail</a>
                                     
                                 </div>
                    
@@ -294,7 +174,7 @@ $count=1;
 
                             <div class="blog-item">
                                 <div class="blog-image">
-                                    <img src="{{url('upload/package_image/'.$package->image)}}" alt="Image">
+                                    <img src="{{url('upload/package_image/'.$package->image)}}" height="300" width="200" alt="{{$package->alt}}">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-date">
@@ -302,6 +182,7 @@ $count=1;
                                     </div>
                                     <h3><a href="#">{{$package->title}}</a></h3>
                                     <p>{!! $package->description!!}</p>
+                                    <a title="edit" class="btn btn-primary" href="{{route('package.detail',$package->id)}} ">view detail</a>
                                     
                                 </div>
                    
@@ -462,18 +343,6 @@ $count=1;
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
     <section class="blog pb-5">
         <div class="container">
@@ -748,27 +617,4 @@ $count=1;
     <div id="back-to-top">
         <a href="#"></a>
     </div>
-
-
-    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugin.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/main-1.js"></script>
-    <script src="js/preloader.js"></script>
-    <script src="js/custom-swiper2.js"></script>
-    <script src="js/custom-countdown.js"></script>
-    <script type="text/javascript">
-        (function () {
-            window['__CF$cv$params'] = {
-                r: '6fca79edfd4089c2',
-                m: 'uw_Eh8G.URyAPtMFtsRM0jdYUEHNtiQbzlHmPfokpZo-1650086473-0-AYlx1g+eakoVhCe6YXtfs98knR7ZVGBiVfgvyrmnnBKdBRclK2JWR5liLYsogij8PQ1gJ17H8CtMekdzFCVRzH1QSC9rpU4ri4MMH8YgcUHZSuv5P4mTKCN/TLQM17Tuhexvk1GB3F4r3Bd3ZLD5feUxdwUYRkF+9UangzCyrMwm',
-                s: [0x1983f21a93, 0x5462892be3],
-                u: '/cdn-cgi/challenge-platform/h/b'
-            }
-        })();
-    </script>
-</body>
-
-</html>
+@endsection

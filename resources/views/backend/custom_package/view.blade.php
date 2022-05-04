@@ -11,13 +11,13 @@ $count=1;
    
 
 
-  <h1>{{$package->title}}</h1>
+ 
 
 
    <section class="breadcrumb-outer text-center">
         <div class="container">
             <div class="breadcrumb-content">
-                <h2>{{$package->title}}</h2>
+                <h2>Your custom package information</h2>
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -40,43 +40,40 @@ $count=1;
                 <div id="content" class="col-lg-8">
                     <div class="detail-content content-wrapper">
                         <div class="detail-info">
+                            
                             <div class="detail-info-content clearfix">
-                                <h2>Package:{{$package->name}}</h2><br>
-                                <h2>Span:{{$package->span}}</h2>
-                                <p class="detail-info-price"><span class="bold">Starts at : {{$package->starts_at}}</span></p>
-                                <div class="deal-rating">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                </div>
+                                <h2>Name:{{$builds->name}}</h2><br>
+                                <h2>Email:{{$builds->email}}</h2>
+                                <p class="detail-info-price "><span class="bold">Phone:{{$builds->phone}}</span></p>
+                               
                             </div>
                         </div>
-                        <div class="gallery detail-box">
-
-                            <div id="in_th_030"
-                                class="carousel slide in_th_brdr_img_030 thumb_scroll_x swipe_x ps_easeOutQuint"
-                                data-ride="carousel" data-pause="hover" data-interval="4000" data-duration="2000">
-
-                                
-
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="item">
-
-                                        <img src="{{url('upload/package_image/'.$package->image)}}" alt="in_th_030_03">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="description detail-box">
                             <div class="detail-title">
                                 <h3>Description</h3>
                             </div>
                             <div class="description-content">
-                                <p>{!!$package->description!!}</p>
+                                <p>Name:{{$builds->name}}</p>
+                                <p>Email:{{$builds->email}}</p>
+                                <p>Phone:{{$builds->phone}}</p>
+                                <p>Tour type:{{$builds->tour_type}}</p>
+                                <p>Tour name:{{$builds->days_detail}}</p>
+                                <p>Days:{{$builds->days}}</p>
+                                <p>Hotel fair:{{$builds->hotel_fair}}</p>
+                                <p>Ticket Fair:{{$builds->ticket_fair}}</p>
+                                <!-- <p>operations</p>
+                                <p>Total:trim(ops, '[]');</p> -->
+                                <p>Total cost: {{ $builds->days * $builds->hotel_fair + $builds-> ticket_fair }}</p>
+
+                                <p>user preference:{{$builds->preference}} </p>
+                                
+
+                                
+                               
                                 
                             </div>
+                           
                         </div>
 
                         
@@ -88,6 +85,7 @@ $count=1;
                             </div>
 
                         </div>
+                        
                     </div>
                 </div>
                 <div id="sidebar-sticky" class="col-lg-4">

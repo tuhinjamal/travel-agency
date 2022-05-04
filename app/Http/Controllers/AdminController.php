@@ -68,14 +68,32 @@ class AdminController extends Controller
     }
 
     public function delete($id){
+
         $data = User::find($id);
-        if (file_exists('public/upload/user_images'.$data->image) AND ! empty($data->image)) {
-    		unlink('public/upload/user_images'.$data->image);
-    	}
-        $data->delete();
-       # Toastr::warning('User deleted successfully :)','Success');
-        #Alert::success('Deleted', 'User has been deleted');
-        
-        return redirect()->route('users.view');
+        if ($data->id == Auth::id()) {
+            return redirect()->route('users.view')
+                ->withErrors(trans('app.you_cannot_delete_yourself'));
+        }else{
+
+            if($data->is_admin == 1){
+                return redirect()->route('users.view')
+                ->withErrors(trans('app.you_cannot_delete_an_admin'));
+            }else{
+                if (file_exists('public/upload/user_images'.$data->image) AND ! empty($data->image)) {
+                    unlink('public/upload/user_images'.$data->image);
+                }
+                $data->delete();
+               # Toastr::warning('User deleted successfully :)','Success');
+                #Alert::success('Deleted', 'User has been deleted');
+                
+                return redirect()->route('users.view');
+
+            }
+            
+            
+
+        }
+
+       
     }
 }

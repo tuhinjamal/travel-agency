@@ -17,9 +17,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/welocme', function () {
+//     return view('welcome');
+// })->name('welcome');
+
+
 Auth::routes();
 Route::group(['namespace'=>'App\Http\Controllers\frontend',],function(){
-    Route::get('/','FrontendController@view');
+    Route::get('/','FrontendController@view')->name('welcome');
+    Route::get('/hajj_packages','FrontendController@hajj_packages')->name('hajj_packages.view');
+    Route::get('/umrah_packages','FrontendController@umrah_packages')->name('umrah_packages.view');
+    Route::get('/tour_packages','FrontendController@tour_packages')->name('tour_packages.view');
+    Route::get('/contact','FrontendController@contact')->name('contact.front_view');
+    
+});
+
+Route::group(['namespace'=>'App\Http\Controllers',],function(){
+
+    
+    Route::get('/view','BuildController@view')->name('custom.view');
+    Route::get('/add','BuildController@add')->name('custom.add');
+    Route::post('/store','BuildController@store')->name('custom.store');
+    Route::get('/edit/{id}','BuildController@edit')->name('custom.edit');
+    Route::post('/update/{id}','BuildController@update')->name('custom.update');
+    Route::get('/delete/{id}','BuildController@delete')->name('custom.delete');
+
+    
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -29,3 +52,4 @@ Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'adminInd
 
 
 Route::get('/detail/{id}', [DetailController::class, 'detail'])->name('package.detail');
+

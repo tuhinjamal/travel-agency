@@ -21,9 +21,11 @@ class CreatePackagesTable extends Migration
             $table->longtext('description')->nullable();
             $table->string('starts_at')->nullable();
             $table->string('image')->nullable();
+            $table->string('alt')->nullable();
+            $table->string('span')->nullable();
             $table->string('meta_image')->nullable();
             $table->string('meta_title')->nullable();
-            $table->string('meta_description')->nullable();
+            $table->longtext('meta_description')->nullable();
             $table->timestamps();
         });
     }

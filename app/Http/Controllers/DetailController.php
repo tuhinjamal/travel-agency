@@ -10,7 +10,7 @@ class DetailController extends Controller
     public function detail($id)
     {   
         
-        $data['elements'] = Element::all(); 
+        $data['elements'] = Element::firstOrFail();
         $data['package'] = Package::find($id);
         return view('detail',$data);
     }

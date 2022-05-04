@@ -21,114 +21,78 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-user mr-1"></i>
-                                Add Package
+                                Add contact information
 
                             </h3>
-                            <a class="btn btn-success float-right btn-sm" href=" {{route('package.view')}} "> <i
-                                    class="fa fa-list"></i> View Packages</a>
+                            <a class="btn btn-success float-right btn-sm" href=" {{route('contact.view')}} "> <i
+                                    class="fa fa-list"></i> View contact</a>
                         </div><!-- /.card-header -->
                         <div class="card-body">
-                            <form method="POST" action="{{route('package.store')}}" enctype="multipart/form-data"
+                            <form method="POST" action="{{route('contact.store')}}" enctype="multipart/form-data"
                                 id="myform">
                                 @csrf
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-12">
-                                        <label for="category"> Category</label>
-                                        <select name="category" id="category" class="form-control  required">
 
-
-                                            <option value="0">Hajj</option>
-                                            <option value="1">Umrah</option>
-                                            <option value="2">Tour</option>
-
-                                        </select>
-                                    </div>
                                     <div class="form-group col-md-12">
 
-                                        <label for="title">title</label>
-                                        <input id="title" type="text" name="title" class="form-control  required">
+                                        <label for="office_1">office_1</label>
+                                        <input id="office_1" type="text" name="office_1" class="form-control  required">
                                         <font style="color: red">
-                                            {{($errors->has('title') )?($errors->first('title')):''}}</font>
+                                            {{($errors->has('office_1') )?($errors->first('office_1')):''}}</font>
 
                                     </div>
 
 
                                     <div class="form-group col-md-12">
 
-                                        <label for="meta_title">meta_title</label>
-                                        <input id="meta_title" type="text" name="meta_title"
-                                            class="form-control  required">
+                                        <label for="office_2">office_2</label>
+                                        <input id="office_2" type="text" name="office_2" class="form-control  required">
                                         <font style="color: red">
-                                            {{($errors->has('meta_title') )?($errors->first('meta_title')):''}}</font>
+                                            {{($errors->has('office_2') )?($errors->first('office_2')):''}}</font>
 
                                     </div>
-
                                     <div class="form-group col-md-12">
 
-                                        <label for="name">name</label>
-                                        <input id="name" type="text" name="name" class="form-control  required">
+                                        <label for="office_3">office_3</label>
+                                        <input id="office_3" type="text" name="office_3" class="form-control  required">
                                         <font style="color: red">
-                                            {{($errors->has('name') )?($errors->first('name')):''}}</font>
+                                            {{($errors->has('office_3') )?($errors->first('office_3')):''}}</font>
 
                                     </div>
-
                                     <div class="form-group col-md-12">
 
-                                        <label for="alt">alt</label>
-                                        <input id="alt" type="text" name="alt" class="form-control  required">
+                                        <label for="office_4">office_4</label>
+                                        <input id="office_4" type="text" name="office_4" class="form-control  required">
                                         <font style="color: red">
-                                            {{($errors->has('alt') )?($errors->first('alt')):''}}</font>
+                                            {{($errors->has('office_4') )?($errors->first('office_4')):''}}</font>
 
                                     </div>
+
+
                                     <div class="form-group col-md-12">
 
-                                        <label for="span">span</label>
-                                        <input id="span" type="text" name="span" class="form-control  required">
+                                        <label for="phone_1">phone_1</label>
+                                        <input id="phone_1" type="text" name="phone_1" class="form-control  required">
                                         <font style="color: red">
-                                            {{($errors->has('span') )?($errors->first('span')):''}}</font>
+                                            {{($errors->has('phone_1') )?($errors->first('phone_1')):''}}</font>
 
                                     </div>
 
                                     <div class="form-group col-md-12">
 
-                                        <label for="starts_at">Starts at</label>
-                                        <input id="starts_at" type="text" name="starts_at"
-                                            class="form-control  required">
+                                        <label for="phone_2">phone_2</label>
+                                        <input id="phone_2" type="text" name="phone_2" class="form-control  required">
                                         <font style="color: red">
-                                            {{($errors->has('starts_at') )?($errors->first('starts_at')):''}}</font>
+                                            {{($errors->has('phone_2') )?($errors->first('phone_2')):''}}</font>
 
                                     </div>
-
-
-
                                     <div class="form-group col-md-12">
 
-                                        <label for="image">Image</label>
-                                        <input type="file" name="image" class="form-control" id="image">
-
-                                    </div>
-                                    <div class="form-group col-md-6">
-
-                                        <img id="showimage"
-                                            src="{{(!empty($editData->image))?url('upload/package_image/'.$editData->image):url('upload/noimage.png')}}"
-                                            style="width: 150px;height: 160px; border:1px solid #000;">
-
-                                    </div>
-
-
-
-                                    <div class="form-group col-md-12">
-
-                                        <label for="meta_image"> Meta Image</label>
-                                        <input type="file" name="meta_image" class="form-control" id="meta_image">
-
-                                    </div>
-                                    <div class="form-group col-md-6">
-
-                                        <img id="showimage"
-                                            src="{{(!empty($editData->meta_image))?url('upload/package_image/meta_image'.$editData->meta_image):url('upload/noimage.png')}}"
-                                            style="width: 150px;height: 160px; border:1px solid #000;">
+                                        <label for="phone_3">phone_3</label>
+                                        <input id="phone_3" type="text" name="phone_3" class="form-control  required">
+                                        <font style="color: red">
+                                            {{($errors->has('phone_3') )?($errors->first('phone_3')):''}}</font>
 
                                     </div>
 
@@ -136,32 +100,22 @@
                                     <div class="form-group col-md-12">
 
                                         <label for="description">description</label>
-                                        <textarea name="description" class="form-control  required" id="editor"
-                                            cols="30" rows="5"></textarea>
-                                        <!-- <input id="name" type="text" name="name" class="form-control  required"> -->
+                                        <input id="description" type="text" name="description"
+                                            class="form-control  required">
                                         <font style="color: red">
                                             {{($errors->has('description') )?($errors->first('description')):''}}</font>
 
                                     </div>
 
+                                    <div class="form-group col-md-12">
 
-
-
-
-                                    <div class="form-group col-md-12 ">
-
-                                        <label for="meta_description">meta_description</label>
-                                        <!-- <input id="meta_description" type="text" name="meta_description" class="form-control  required"> -->
-                                        <textarea name="meta_description" class="form-control  required"
-                                            id="meta_editor" cols="30" rows="5"></textarea>
+                                        <label for="email">Email</label>
+                                        <input id="email" type="email" name="email" class="form-control  required">
                                         <font style="color: red">
-                                            {{($errors->has('meta_description') )?($errors->first('meta_description')):''}}
-                                        </font>
+                                            {{($errors->has('email') )?($errors->first('email')):''}}</font>
 
                                     </div>
-
-
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
 
                                         <input type="submit" value="submit" class="btn btn-primary">
 

@@ -84,5 +84,25 @@ Route::group(['namespace'=>'App\Http\Controllers','middleware'=>'is_admin'],func
         Route::get('/delete/{id}','SliderController@delete')->name('slider.delete');
 
     });
+
+    Route::prefix('contact')->group(function(){
+        Route::get('/view','ContactController@view')->name('contact.view');
+        Route::get('/add','ContactController@add')->name('contact.add');
+        Route::post('/store','ContactController@store')->name('contact.store');
+        Route::get('/edit/{id}','ContactController@edit')->name('contact.edit');
+        Route::post('/update/{id}','ContactController@update')->name('contact.update');
+        Route::get('/delete/{id}','ContactController@delete')->name('contact.delete');
+
+    });
+
+     Route::prefix('buildManager')->group(function(){
+        Route::get('/view','BuildManagerController@view')->name('buildManager.view');
+        Route::get('/add','BuildManagerController@add')->name('buildManager.add');
+        Route::post('/store','BuildManagerController@store')->name('buildManager.store');
+        Route::get('/edit/{id}','BuildManagerController@edit')->name('buildManager.edit');
+        Route::post('/update/{id}','BuildManagerController@update')->name('buildManager.update');
+        Route::get('/delete/{id}','BuildManagerController@delete')->name('buildManager.delete');
+
+    });
     
 });
