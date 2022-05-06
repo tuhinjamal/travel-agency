@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Element;
 use App\Models\Build;
 use App\Models\BuildManager;
+use App\Models\Contact;
 use DB;
 
 
@@ -21,7 +22,7 @@ class BuildController extends Controller
        //$data['ops']=collect(Build::select(DB::raw('(days * hotel_fair + ticket_fair) as total '))->firstOrFail())->flatten();
       
       
-        
+        $data['contacts']=Contact::firstOrFail();
 
 
         #dd('ok');

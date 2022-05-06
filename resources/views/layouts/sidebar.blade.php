@@ -163,7 +163,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Contact
+                Control CustomPackage
                 <i class="fas fa-angle-left right"></i>
                 <!-- <span class="badge badge-info right"></span> -->
               </p>
@@ -171,6 +171,25 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('buildManager.view')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Build Manager</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Newsterller editor
+                <i class="fas fa-angle-left right"></i>
+                <!-- <span class="badge badge-info right"></span> -->
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('newsManager.view')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Build Manager</p>
                 </a>

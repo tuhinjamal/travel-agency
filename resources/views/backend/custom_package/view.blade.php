@@ -90,49 +90,16 @@ $count=1;
                 </div>
                 <div id="sidebar-sticky" class="col-lg-4">
                     <aside class="detail-sidebar sidebar-wrapper">
-                        <div class="sidebar-item sidebar-item-dark">
-                            <div class="detail-title">
-                                <h3>Book this tour</h3>
-                            </div>
-                            <form>
-                                <div class="row">
-                                    <div class="form-group col-lg-12">
-                                        <input type="text" class="form-control" id="Name1" placeholder="Name">
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <input type="email" class="form-control" id="email1" placeholder="Email">
-                                    </div>
-                                    <div class="form-group col-lg-6 col-left-padding">
-                                        <input type="number" class="form-control" id="phnumber1"
-                                            placeholder="Phone Number">
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                        <input type="date" class="form-control" id="date">
-                                    </div>
-                                    <div class="form-group col-lg-6 col-left-padding">
-                                        <input type="number" class="form-control" id="phnumber">
-                                    </div>
-                                    <div class="textarea col-lg-12">
-                                        <textarea placeholder="Message"></textarea>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="comment-btn">
-                                            <a href="#" class="btn-blue btn-red">Book Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                       
                         
                         <div class="sidebar-item sidebar-helpline">
                             <div class="sidebar-helpline-content">
-                                <h3>Any Questions?</h3>
-                                <p>Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sedpr do eiusmod tempor
-                                    incididunt ut.</p>
-                                <p><i class="flaticon-phone-call"></i> (012)-345-6789</p>
-                                <p><i class="flaticon-mail"></i> <a href="/cdn-cgi/l/email-protection"
-                                        class="__cf_email__"
-                                        data-cfemail="35415a40475b414754435059754150464158545c591b565a58">[email&#160;protected]</a>
+                              <h3>Contact us</h3>
+                                <p>{{$contacts->description}}</p>
+                                <p><i class="flaticon-phone-call"></i> {{$contacts->phone_1}} </p>
+                                <p><i class="flaticon-phone-call"></i> {{$contacts->phone_2}} </p>
+                                <p><i class="flaticon-phone-call"></i> {{$contacts->phone_3}} </p>
+                                <p><i class="flaticon-mail"> {{$contacts->email}} </i> 
                                 </p>
                             </div>
                         </div>

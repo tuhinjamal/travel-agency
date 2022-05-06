@@ -42,8 +42,16 @@ Route::group(['namespace'=>'App\Http\Controllers',],function(){
     Route::post('/update/{id}','BuildController@update')->name('custom.update');
     Route::get('/delete/{id}','BuildController@delete')->name('custom.delete');
 
+
+    Route::get('/viewNews','NewstellerController@view')->name('Newsteller.view');
+    Route::get('/addNews','NewstellerController@add')->name('Newsteller.add');
+    Route::post('/storeNews','NewstellerController@store')->name('Newsteller.store');
+    Route::get('/editNews/{id}','NewstellerController@edit')->name('Newsteller.edit');
+    Route::post('/updateNews/{id}','NewstellerController@update')->name('Newsteller.update');
+    Route::get('/deleteNews/{id}','NewstellerController@delete')->name('Newsteller.delete');
     
 });
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

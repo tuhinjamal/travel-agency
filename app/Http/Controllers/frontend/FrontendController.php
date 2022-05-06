@@ -6,6 +6,7 @@ use App\Models\Package;
 use App\Models\Slider;
 use App\Models\Element;
 use App\Models\Contact;
+use App\Models\Newsteller;
 
 
 use App\Http\Controllers\Controller;
@@ -17,6 +18,8 @@ class FrontendController extends Controller
 
         //slider is here
         $data['sliders'] = Slider::all(); 
+        //news loaded from here
+        $data['newstellers'] = Newsteller::all();
         //elements is here
         $data['elements'] = Element::firstOrFail(); 
         
@@ -47,6 +50,15 @@ class FrontendController extends Controller
    return view('welcome',$data);
    }
 
+
+
+   public function newsteller(){
+        $data['newstellers'] = Newsteller::all();
+         return view('homelayout.layout',$data);
+   }
+
+
+
    public function hajj_packages(){
     
     $data['elements'] = Element::firstOrFail(); 
@@ -71,6 +83,7 @@ class FrontendController extends Controller
         public function tour_packages(){
     
             $data['elements'] = Element::firstOrFail(); 
+             
             $data['tour_package'] = DB::table('packages')
             ->where('category', '=', 2)
             ->get();

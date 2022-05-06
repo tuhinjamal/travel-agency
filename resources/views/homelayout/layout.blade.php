@@ -43,6 +43,16 @@
         </div>
     @endauth
 @endif
+      <div class="hwrap">
+        <div class="hmove">
+            @foreach($newstellers as $newsteller)
+            <div class="hitem">{{$newsteller->news_title}}</div>
+            <div class="hitem">{{$newsteller->news}}</div>
+            
+            
+            @endforeach
+        </div>
+    </div>
     </header>
 
 

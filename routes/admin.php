@@ -104,5 +104,15 @@ Route::group(['namespace'=>'App\Http\Controllers','middleware'=>'is_admin'],func
         Route::get('/delete/{id}','BuildManagerController@delete')->name('buildManager.delete');
 
     });
+
+     Route::prefix('newsManager')->group(function(){
+        Route::get('/view','NewsmanagerController@view')->name('newsManager.view');
+        Route::get('/add','NewsmanagerController@add')->name('newsManager.add');
+        Route::post('/store','NewsmanagerController@store')->name('newsManager.store');
+        Route::get('/edit/{id}','NewsmanagerController@edit')->name('newsManager.edit');
+        Route::post('/update/{id}','NewsmanagerController@update')->name('newsManager.update');
+        Route::get('/delete/{id}','NewsmanagerController@delete')->name('newsManager.delete');
+
+    });
     
 });
